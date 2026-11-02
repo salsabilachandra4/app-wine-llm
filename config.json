@@ -1,0 +1,116 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "temperature": 0,
+  "max_tokens": 512,
+  "reasoning_effort": "low",
+  "labels": [
+    "Kultivar_1",
+    "Kultivar_2",
+    "Kultivar_3"
+  ],
+  "fitur": [
+    "alcohol",
+    "malic_acid",
+    "ash",
+    "alcalinity_of_ash",
+    "magnesium",
+    "total_phenols",
+    "flavanoids",
+    "nonflavanoid_phenols",
+    "proanthocyanins",
+    "color_intensity",
+    "hue",
+    "od280_od315",
+    "proline"
+  ],
+  "few_shot": [],
+  "system_prompt": "Kamu adalah ahli kimia anggur. Data berisi 13 hasil analisis kimia satu sampel anggur dari Italia. Tentukan kultivar (jenis tanaman anggur) asalnya. Pilihan: Kultivar_1, Kultivar_2, Kultivar_3. Jawab HANYA dengan satu label persis seperti tertulis.\n\nProfil median tiap kultivar dari data latih:\n- Kultivar_1: alcohol=13.735, malic_acid=1.74, ash=2.425, alcalinity_of_ash=16.8, magnesium=107.5, total_phenols=2.8, flavanoids=2.945, nonflavanoid_phenols=0.29, proanthocyanins=1.895, color_intensity=5.4, hue=1.06, od280_od315=3, proline=1087.5\n- Kultivar_2: alcohol=12.29, malic_acid=1.66, ash=2.2, alcalinity_of_ash=20, magnesium=87, total_phenols=2.2, flavanoids=2.09, nonflavanoid_phenols=0.32, proanthocyanins=1.63, color_intensity=2.8, hue=1, od280_od315=2.87, proline=495\n- Kultivar_3: alcohol=13.02, malic_acid=3.25, ash=2.48, alcalinity_of_ash=21.5, magnesium=97.5, total_phenols=1.665, flavanoids=0.675, nonflavanoid_phenols=0.46, proanthocyanins=1.07, color_intensity=7.4, hue=0.665, od280_od315=1.72, proline=632.5",
+  "median_fitur": {
+    "alcohol": 12.975000000000001,
+    "malic_acid": 1.8050000000000002,
+    "ash": 2.36,
+    "alcalinity_of_ash": 20.0,
+    "magnesium": 97.5,
+    "total_phenols": 2.41,
+    "flavanoids": 2.1550000000000002,
+    "nonflavanoid_phenols": 0.34,
+    "proanthocyanins": 1.565,
+    "color_intensity": 4.64,
+    "hue": 0.965,
+    "od280_od315": 2.78,
+    "proline": 675.0
+  },
+  "rentang_fitur": {
+    "alcohol": [
+      11.03,
+      14.83
+    ],
+    "malic_acid": [
+      0.74,
+      5.8
+    ],
+    "ash": [
+      1.36,
+      3.23
+    ],
+    "alcalinity_of_ash": [
+      10.6,
+      30.0
+    ],
+    "magnesium": [
+      70.0,
+      162.0
+    ],
+    "total_phenols": [
+      0.98,
+      3.88
+    ],
+    "flavanoids": [
+      0.34,
+      5.08
+    ],
+    "nonflavanoid_phenols": [
+      0.13,
+      0.66
+    ],
+    "proanthocyanins": [
+      0.41,
+      3.58
+    ],
+    "color_intensity": [
+      1.28,
+      13.0
+    ],
+    "hue": [
+      0.48,
+      1.71
+    ],
+    "od280_od315": [
+      1.27,
+      4.0
+    ],
+    "proline": [
+      278.0,
+      1680.0
+    ]
+  },
+  "evaluasi": {
+    "konfigurasi": "2 zero-shot + profil",
+    "accuracy": 0.9074,
+    "f1_macro": 0.9073,
+    "f1_per_kelas": {
+      "Kultivar_1": 0.95,
+      "Kultivar_2": 0.88,
+      "Kultivar_3": 0.9
+    },
+    "invalid": 0,
+    "n": 54,
+    "token_per_request": 792,
+    "latensi_ms": 5069,
+    "target_f1": 0.7,
+    "lolos_gerbang": true,
+    "dataset": "UCI Wine (bagian test)",
+    "tanggal": "2026-11-02",
+    "f1_dnn_pembanding": 0.9808
+  }
+}
